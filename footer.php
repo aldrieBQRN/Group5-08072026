@@ -37,13 +37,19 @@
             background: #f2f2f2;
             color: #70757a;
             font-size: 14px;
-            margin-top: 800px;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin-top: auto;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 0;
         }
 
         .footer-top {
-            padding: 15px 30px;
+            padding: 15px 20px;
             border-bottom: 1px solid #dadce0;
+            font-size: 13px;
+            background: #f2f2f2;
         }
 
         .footer-bottom {
@@ -51,21 +57,27 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            padding: 25px 30px;
+            padding: 15px 20px;
+            gap: 25px;
         }
 
         .footer-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .footer-links a {
             color: #70757a;
             text-decoration: none;
+            font-size: 13px;
+            padding: 0;
+            transition: color 0.2s ease;
         }
 
         .footer-links a:hover {
+            color: #4d5156;
             text-decoration: underline;
         }
 
@@ -81,6 +93,7 @@
 
         .settings-toggle {
             cursor: pointer;
+            font-size: 13px;
         }
 
         .dropdown-menu {
@@ -90,12 +103,13 @@
             right: 0;
             background: #2d2d2d;
             border: 1px solid #555;
-            border-radius: 4px;
-            min-width: 270px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+            min-width: 220px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
             z-index: 1000;
             color: #e8e8e8;
-            font-size: 14px;
+            font-size: 13px;
+            margin-bottom: 8px;
         }
 
         .dropdown-menu.show {
@@ -104,45 +118,56 @@
 
         .dropdown-menu a {
             display: block;
-            padding: 12px 20px;
+            padding: 10px 16px;
             color: #e8e8e8;
             text-decoration: none;
             transition: background 0.2s;
+            font-size: 13px;
         }
 
         .dropdown-menu a:hover {
-            background: #404040;
+            background: #383838;
             text-decoration: none;
         }
 
         .dropdown-menu hr {
-            margin: 8px 0;
+            margin: 6px 0;
             border: none;
             border-top: 1px solid #444;
         }
 
         .dark-theme {
-            padding: 12px 20px;
+            padding: 10px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 13px;
         }
 
         .toggle-btn {
-            padding: 4px 8px;
+            padding: 3px 6px;
             background: #404040;
-            border-radius: 3px;
-            font-size: 12px;
+            border-radius: 2px;
+            font-size: 11px;
         }
 
         @media (max-width: 768px) {
+            .google-footer {
+                position: static;
+            }
+
             .footer-bottom {
                 flex-direction: column;
                 gap: 10px;
+                padding: 12px 20px;
             }
 
             .footer-links.right {
                 margin-left: 0;
+            }
+
+            .footer-top {
+                padding: 12px 20px;
             }
         }
     </style>
@@ -152,17 +177,19 @@
             const settingsToggle = document.querySelector('.settings-toggle');
             const dropdownMenu = document.querySelector('.dropdown-menu');
 
-            settingsToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                dropdownMenu.classList.toggle('show');
-            });
+            if (settingsToggle && dropdownMenu) {
+                settingsToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdownMenu.classList.toggle('show');
+                });
 
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.settings-dropdown')) {
-                    dropdownMenu.classList.remove('show');
-                }
-            });
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.settings-dropdown')) {
+                        dropdownMenu.classList.remove('show');
+                    }
+                });
+            }
         });
     </script>
 </footer>
