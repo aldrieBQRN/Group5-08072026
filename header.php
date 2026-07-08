@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <header>
     <nav>
         <ul>
@@ -6,7 +6,7 @@
     </nav>
 </header>
 
-=======
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,5 +155,5 @@
     </script>
 </body>
 </html>
->>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
+
 
