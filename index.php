@@ -2,12 +2,20 @@
 
 <main>
     <style>
+        /* Make the body a flex container to push the footer down naturally */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
         main {
+            flex-grow: 1; /* This takes up remaining space, pushing the footer to the bottom */
             display: flex;
             flex-direction: column;
             align-items: center;
             font-family: Arial, sans-serif;
-            height: calc(100vh - 200px);
         }
 
         .search-container {
@@ -41,7 +49,7 @@
             height: 46px;
             border: 1px solid #dfe1e5;
             border-radius: 24px;
-            padding: 0 8px 0 14px; /* Slightly less padding on the right to fit icons */
+            padding: 0 8px 0 14px;
             box-sizing: border-box;
             transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
             position: relative;
@@ -67,7 +75,7 @@
         .search-icon {
             width: 20px;
             height: 20px;
-            fill: #000000; /* Set the search icon to black */
+            fill: #000000;
             flex-shrink: 0;
         }
 
@@ -157,6 +165,12 @@
 
                 <!-- Search Actions (AI, Voice, Lens) -->
                 <div class="action-icons">
+                    <!-- AI Mode / Gemini Sparkle Icon -->
+                    <button type="button" class="icon-btn" title="Search with AI">
+                        <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#000000" d="M12 2.5C12 2.5 12 9.5 19.5 12C12 14.5 12 21.5 12 21.5C12 21.5 12 14.5 4.5 12C12 9.5 12 2.5 12 2.5Z"></path>
+                        </svg>
+                    </button>
 
                     <!-- Voice Search Mic Icon -->
                     <button type="button" class="icon-btn" title="Search by voice">
@@ -176,13 +190,6 @@
                             <path fill="#000000" d="M20.5 8.25V5.5c0-1.1-.9-2-2-2h-2.75v2H18.5v2.75h2z"></path>
                             <path fill="#000000" d="M20.5 15.75V18.5c0 1.1-.9 2-2 2h-2.75v2H18.5c1.1 0 2-.9 2-2v-2.75h-2z"></path>
                             <circle fill="#000000" cx="12" cy="12" r="3"></circle>
-                        </svg>
-                    </button>
-
-                     <!-- AI Mode / Gemini Sparkle Icon -->
-                    <button type="button" class="icon-btn" title="Search with AI">
-                        <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#000000" d="M12 2.5C12 2.5 12 9.5 19.5 12C12 14.5 12 21.5 12 21.5C12 21.5 12 14.5 4.5 12C12 9.5 12 2.5 12 2.5Z"></path>
                         </svg>
                     </button>
                 </div>
