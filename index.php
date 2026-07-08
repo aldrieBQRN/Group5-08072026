@@ -150,29 +150,23 @@
     </style>
 
     <div class="search-container">
-        <!-- Official Google Logo -->
         <img class="google-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
         
-        <!-- Search Form -->
         <form action="https://www.google.com/search" method="get">
             <div class="search-box">
-                <!-- Magnifying Glass Icon -->
                 <svg class="search-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
                 </svg>
                 
                 <input type="text" name="q" title="Search" autofocus>
 
-                <!-- Search Actions (AI, Voice, Lens) -->
                 <div class="action-icons">
-                    <!-- AI Mode / Gemini Sparkle Icon -->
                     <button type="button" class="icon-btn" title="Search with AI">
                         <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#000000" d="M12 2.5C12 2.5 12 9.5 19.5 12C12 14.5 12 21.5 12 21.5C12 21.5 12 14.5 4.5 12C12 9.5 12 2.5 12 2.5Z"></path>
                         </svg>
                     </button>
 
-                    <!-- Voice Search Mic Icon -->
                     <button type="button" class="icon-btn" title="Search by voice">
                         <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#000000" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"></path>
@@ -182,7 +176,6 @@
                         </svg>
                     </button>
 
-                    <!-- Google Lens Image Icon -->
                     <button type="button" class="icon-btn" title="Search by image">
                         <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#000000" d="M8.25 3.5H5.5C4.4 3.5 3.5 4.4 3.5 5.5v2.75h2V5.5h2.75v-2z"></path>
