@@ -2,6 +2,7 @@
 
 <main>
     <style>
+<<<<<<< HEAD
         * {
             margin: 0;
             padding: 0;
@@ -29,11 +30,34 @@
         }
 
         .search-container {
+=======
+        /* Make the body a flex container to push the footer down naturally */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            flex-grow: 1; /* This takes up remaining space, pushing the footer to the bottom */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .search-container {
+            margin-top: 120px;
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
+<<<<<<< HEAD
             max-width: 584px;
+=======
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
         }
 
         .google-logo {
@@ -55,6 +79,7 @@
             display: flex;
             align-items: center;
             width: 100%;
+<<<<<<< HEAD
             height: 44px;
             border: 1px solid #dfe1e5;
             border-radius: 24px;
@@ -62,6 +87,15 @@
             box-sizing: border-box;
             background-color: #fff;
             transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1), border-color 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+=======
+            max-width: 584px;
+            height: 46px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 8px 0 14px;
+            box-sizing: border-box;
+            transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
             position: relative;
         }
 
@@ -79,6 +113,7 @@
             height: 34px;
             padding: 0 10px;
             background-color: transparent;
+<<<<<<< HEAD
             font-family: inherit;
         }
 
@@ -89,6 +124,16 @@
             fill: #9aa0a6;
             flex-shrink: 0;
             margin-right: 6px;
+=======
+        }
+
+        /* Icons */
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            fill: #000000;
+            flex-shrink: 0;
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
         }
 
         .action-icons {
@@ -101,7 +146,11 @@
             background: none;
             border: none;
             cursor: pointer;
+<<<<<<< HEAD
             padding: 6px;
+=======
+            padding: 8px;
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -114,13 +163,19 @@
         }
 
         .icon-btn svg {
+<<<<<<< HEAD
             width: 20px;
             height: 20px;
             fill: #4d5156;
+=======
+            width: 24px;
+            height: 24px;
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
         }
 
         /* Buttons Styling */
         .buttons-container {
+<<<<<<< HEAD
             margin-top: 24px;
             display: flex;
             justify-content: center;
@@ -130,6 +185,16 @@
 
         .buttons-container button {
             padding: 0 20px;
+=======
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .buttons-container button {
+            padding: 0 16px;
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
             height: 36px;
             border: 1px solid #f8f9fa;
             border-radius: 4px;
@@ -138,14 +203,18 @@
             font-family: inherit;
             font-size: 14px;
             cursor: pointer;
+<<<<<<< HEAD
             white-space: nowrap;
             transition: all 0.1s ease;
+=======
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
         }
 
         .buttons-container button:hover {
             box-shadow: 0 1px 1px rgba(0,0,0,.1);
             border: 1px solid #dadce0;
             color: #202124;
+<<<<<<< HEAD
             background-color: #f8f9fa;
         }
 
@@ -154,6 +223,14 @@
             font-size: 13px;
             color: #4d5156;
             line-height: 1.6;
+=======
+        }
+
+        .language-offer {
+            margin-top: 28px;
+            font-size: 13px;
+            color: #4d5156;
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
         }
 
         .language-offer a {
@@ -165,6 +242,7 @@
         .language-offer a:hover {
             text-decoration: underline;
         }
+<<<<<<< HEAD
 
         @media (max-width: 600px) {
             main {
@@ -196,6 +274,8 @@
                 font-size: 13px;
             }
         }
+=======
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
     </style>
 
     <div class="search-container">
@@ -214,20 +294,37 @@
 
                 <!-- Search Actions (AI, Voice, Lens) -->
                 <div class="action-icons">
+<<<<<<< HEAD
+=======
+                    <!-- AI Mode / Gemini Sparkle Icon -->
+                    <button type="button" class="icon-btn" title="Search with AI">
+                        <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#000000" d="M12 2.5C12 2.5 12 9.5 19.5 12C12 14.5 12 21.5 12 21.5C12 21.5 12 14.5 4.5 12C12 9.5 12 2.5 12 2.5Z"></path>
+                        </svg>
+                    </button>
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
 
                     <!-- Voice Search Mic Icon -->
                     <button type="button" class="icon-btn" title="Search by voice">
                         <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
                             <path fill="currentColor" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"></path>
                             <path fill="currentColor" d="m11 18.08h2v3.92h-2z"></path>
                             <path fill="currentColor" d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45.56 2.42 1.47 3.38v.32l-1.15 1.18z"></path>
                             <path fill="currentColor" d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"></path>
+=======
+                            <path fill="#000000" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"></path>
+                            <path fill="#000000" d="m11 18.08h2v3.92h-2z"></path>
+                            <path fill="#000000" d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45.56 2.42 1.47 3.38v.32l-1.15 1.18z"></path>
+                            <path fill="#000000" d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"></path>
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
                         </svg>
                     </button>
 
                     <!-- Google Lens Image Icon -->
                     <button type="button" class="icon-btn" title="Search by image">
                         <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
                             <path fill="currentColor" d="M8.25 3.5H5.5C4.4 3.5 3.5 4.4 3.5 5.5v2.75h2V5.5h2.75v-2z"></path>
                             <path fill="currentColor" d="M8.25 20.5H5.5c-1.1 0-2-.9-2-2v-2.75h2v2.75h2.75v2z"></path>
                             <path fill="currentColor" d="M20.5 8.25V5.5c0-1.1-.9-2-2-2h-2.75v2H18.5v2.75h2z"></path>
@@ -240,6 +337,13 @@
                     <button type="button" class="icon-btn" title="Search with AI">
                         <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="currentColor" d="M12 2.5C12 2.5 12 9.5 19.5 12C12 14.5 12 21.5 12 21.5C12 21.5 12 14.5 4.5 12C12 9.5 12 2.5 12 2.5Z"></path>
+=======
+                            <path fill="#000000" d="M8.25 3.5H5.5C4.4 3.5 3.5 4.4 3.5 5.5v2.75h2V5.5h2.75v-2z"></path>
+                            <path fill="#000000" d="M8.25 20.5H5.5c-1.1 0-2-.9-2-2v-2.75h2v2.75h2.75v2z"></path>
+                            <path fill="#000000" d="M20.5 8.25V5.5c0-1.1-.9-2-2-2h-2.75v2H18.5v2.75h2z"></path>
+                            <path fill="#000000" d="M20.5 15.75V18.5c0 1.1-.9 2-2 2h-2.75v2H18.5c1.1 0 2-.9 2-2v-2.75h-2z"></path>
+                            <circle fill="#000000" cx="12" cy="12" r="3"></circle>
+>>>>>>> bbbfe897487ae33a17cce5a8ef526dfc74a0c124
                         </svg>
                     </button>
                 </div>
