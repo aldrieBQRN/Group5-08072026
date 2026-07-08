@@ -1,95 +1,86 @@
-# Group5-08072026 - Google Search Interface Clone
+# Group Activity: GitHub + Web Dev
 
-A clean, minimalist search interface inspired by Google's homepage design.
+## Design a front-end for Google Search, Google Image Search, and Google Advanced Search.
 
-## Features
+For this exercise, you will write forms that send data to an existing web server: in this case, Google's. When you perform a Google search, as by typing in a query into Google's homepage and clicking the "Google Search" button, how does that query work? Let's try to find out.
 
-- **Clean Search Interface** - Simple, fast, and user-friendly search box
-- **Philippines Localization** - Footer with Philippines-specific links and settings
-- **Settings Dropdown Menu** - Accessible settings for search preferences
-  - Search settings
-  - Advanced search
-  - Your data in Search
-  - Search history
-  - Search help
-  - Send feedback
-  - Dark theme toggle
-  - Privacy & Terms links
+Navigate to [google.com](https://www.google.com/), type in a query like "Batstateu" into the search field, and click the "Google Search" button.
 
-## Project Structure
+As you probably expected, you should see Google search results for "Batstateu." But now, take a look at the URL. It should begin with `https://www.google.com/search`, the route on Google's website that allows for searching. But following the route is a `?`, followed by some additional information.
+
+Those additional pieces of information in the URL are known as a query string. The query string consists of a sequence of GET parameters, where each parameter has a name and a value. Query strings are generally formatted as
 
 ```
-├── index.php          # Main search page
-├── header.php         # Navigation header
-├── footer.php         # Footer with links and settings
-├── README.md          # This file
-└── desktop.ini        # Windows configuration
+field1=value1&field2=value2&field3=value3...
 ```
 
-## Installation
+where an `=` separates the name of the parameter from its value, and the `&` symbol separates parameters from one another. These parameters are a way for forms to submit information to a web server, by encoding the form data in the URL.
 
-1. **Download/Clone the project** to your XAMPP htdocs folder:
-   ```bash
-   cd C:\xampp\htdocs
-   git clone <repository-url>
-   cd Group5-08072026
-   ```
+Take a look at the URL for your Google search results page. It seems there are quite a few parameters that Google is using. Look through the URL (it may be helpful to copy/paste it into a text editor), and see if you can find any mention of "Batstateu," our query.
 
-2. **Start XAMPP**
-   - Open XAMPP Control Panel
-   - Click "Start" for Apache
+If you look through the URL, you should see that one of the GET parameters in the URL is `q=Batstateu`. This suggests that the name for the parameter corresponding to a Google search is `q` (likely short for "query").
 
-3. **Open in browser**
-   - Navigate to: `http://localhost/Group5-08072026/`
+It turns out that, while the other parameters provide useful data to Google, only the `q` parameter is required to perform a search. You can test this for yourself by visiting `https://www.google.com/search?q=Batstateu`, deleting all the other parameters. You should see the same Google results!
 
-## Usage
+Using this information, we can actually re-implement a front end for Google's homepage. Paste the below into an HTML file called `index.html`, and open it in a browser.
 
-- **Search** - Type in the search box to search
-- **Settings** - Click "Settings" in the footer to access preferences
-- **Navigation** - Use footer links for About, Privacy, Terms, etc.
-
-## Technologies Used
-
-- **PHP** - Server-side rendering
-- **HTML** - Semantic markup
-- **CSS** - Modern styling and layout
-- **JavaScript** - Interactive dropdown menus
-
-## Files
-
-- `index.php` - Main page with search container
-- `header.php` - Header navigation component
-- `footer.php` - Footer with links, settings menu, and scripts
-
-## Git Workflow
-
-```bash
-# View current branch
-git branch
-
-# Switch to main branch
-git checkout main
-
-# Pull latest changes
-git pull origin main
-
-# Switch back to your branch
-git checkout kier
-
-# Stage changes
-git add .
-
-# Commit changes
-git commit -m "Your message"
-
-# Push to repository
-git push origin kier
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+    </head>
+    <body>
+        <form action="https://www.google.com/search">
+            <input type="text" name="q">
+            <input type="submit" value="Google Search">
+        </form>
+    </body>
+</html>
 ```
 
-## Authors
+When you open this page in a browser, you should see a (very simple) HTML form. Type in a search query like "Batstateu" and click "Google Search", and you should be taken to Google's search results page!
 
-- Group 5 (08/07/2026)
+How did that work? In this case, the `action` attribute on the `form` told the browser that when the form is submitted, the data should be sent to `https://www.google.com/search`. And by adding an `input` field to the form whose `name` attribute was `q`, whatever the user types into that input field is included as a GET parameter in the URL.
 
-## License
+Your task in this activity is to expand on this site, creating your own front end for Google Search, as by exploring Google's interface to identify what GET parameters it expects and adding the necessary HTML and CSS to your website.
 
-This is a group project for educational purposes.
+## Specifications
+
+Your website must meet the following requirements:
+
+- Your website should have at least three pages: one for regular Google Search (which must be called `index.html`), one for Google Image Search, and one for Google Advanced Search.
+
+- On the Google Search page, there should be links in the upper-right of the page to go to Image Search or Advanced Search. On each of the other two pages, there should be a link in the upper-right to go back to Google Search.
+- On the Google Search page, the user should be able to type in a query, click "Google Search", and be taken to the Google search results for that page.
+
+- Like Google's own, your search bar should be centered with rounded corners. The search button should also be centered, and should be beneath the search bar.
+- On the Google Image Search page, the user should be able to type in a query, click a search button, and be taken to the Google Image search results for that page.
+- On the Google Advanced Search page, the user should be able to provide input for the following four fields (taken from Google's own [advanced search](https://www.google.com/advanced_search) options)
+
+- Find pages with… "all these words:"
+- Find pages with… "this exact word or phrase:"
+- Find pages with… "any of these words:"
+- Find pages with… "none of these words:"
+- Like Google's own Advanced Search page, the four options should be stacked vertically, and all of the text fields should be left aligned.
+
+- Consistent with Google's own CSS, the "Advanced Search" button should be blue with white text.
+- When the "Advanced Search" button is clicked, the user should be taken to the search results page for their given query.
+- Add an "I'm Feeling Lucky" button to the main Google Search page. Consistent with Google's own behavior, clicking this link should take users directly to the first Google search result for the query, bypassing the normal results page.
+
+- You may encounter a redirect notice when using the "I'm Feeling Lucky" button. Not to worry! This is an expected consequence of a security feature implemented by Google.
+- The CSS you write should resemble Google's own aesthetics.
+
+## Hints
+
+- To determine what the parameter names should be, you're welcome to experiment with making Google searches, and looking at the resulting URL. It may also be helpful to open the "Network" inspector (accessible in Google Chrome by choosing View -> Developer -> Developer Tools) to view details about requests your browser makes to Google.
+
+- Any `<input>` element (whether its `type` is `text`, `submit`, `number`, or something else entirely) can have `name` and `value` attributes that will become GET parameters when a form is submitted.
+- You may also find it helpful to look at Google's own HTML to answer these questions. In most browsers, you can control-click or right-click on a page and choose "View Page Source" to view the page's underlying HTML.
+- To include an input field in a form that users cannot see or modify, you can use a ["hidden"](https://www.w3schools.com/tags/att_input_type_hidden.asp) input field.
+
+## How to submit?
+
+1. Share your Github repo (private) in classroom. Any of the member can share the repo.
+2. But make sure that everyone has contribution in doing this activity. **(very important)**
+3. Follow a Feature Branch workflow. For more details visit this [guide](https://app.notion.com/d277164935af4ffda1372a1c3e47c4d2?pvs=21).
